@@ -18,8 +18,8 @@ def blocking_task(name):
     print(result)
 
     # fixme: 下述代码执行报错 There is no current event loop in thread
-    results = asyncio.gather(async_task("task-3"), async_task("task-4"))
-    print(results)
+    # results = asyncio.gather(async_task("task-3"), async_task("task-4"))
+    # print(results)
 
     print(f"任务 {name} 执行完毕")
 
