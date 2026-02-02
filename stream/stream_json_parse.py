@@ -1,3 +1,7 @@
+"""
+从json流式输出中，解析已经就绪的完整对象
+"""
+
 import ijson
 import io
 import time
