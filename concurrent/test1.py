@@ -1,5 +1,8 @@
+"""
+异步多任务并发执行
+"""
+
 import asyncio
-import time
 
 async def async_blocking_task(name, time_interval):
     """异步版本的阻塞任务"""
