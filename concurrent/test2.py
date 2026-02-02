@@ -10,7 +10,7 @@ async def async_blocking_task(name, time_interval):
 
     # 采用run_in_executor 在线程池中运行阻塞函数，避免阻塞事件循环
     def time_sleep(task_time_interval):
-        time.sleep(time_interval)
+        time.sleep(task_time_interval)
 
     loop = asyncio.get_event_loop()
     await loop.run_in_executor(None, time_sleep, time_interval)
