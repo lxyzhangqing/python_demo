@@ -1,3 +1,7 @@
+"""
+主线程与子线程之间通过共享变量传递数据
+"""
+
 import threading
 import asyncio
 import time
