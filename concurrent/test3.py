@@ -1,3 +1,7 @@
+"""
+创建多线程执行阻塞任务，避免并发执行多个任务时，任务阻塞
+"""
+
 import threading
 import asyncio
 import time
