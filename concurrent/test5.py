@@ -1,6 +1,9 @@
+"""
+多线程同步函数中调用异步函数
+"""
+
 import threading
 import asyncio
-import time
 
 async def async_task(name):
     print(f"异步任务 {name} 开始执行")
