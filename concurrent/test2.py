@@ -1,12 +1,13 @@
+"""
+阻塞任务放到线程池中执行，避免多协程并发执行时任务阻塞
+"""
+
 import asyncio
 import time
 
 async def async_blocking_task(name, time_interval):
     """异步版本的阻塞任务"""
     print(f"任务 {name} 开始执行")
-
-    # fixme: 阻塞睡眠会导致该任务的睡眠期间，其他任务也无法执行，直到该任务完成，失去并发的意义
-    #time.sleep(time_interval)
 
     # 采用run_in_executor 在线程池中运行阻塞函数，避免阻塞事件循环
     def time_sleep(task_time_interval):
