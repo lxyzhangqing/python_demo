@@ -44,11 +44,7 @@ def multi_array_stream_parser(chunks):
                     full_obj = builder.value
                     
                     obj_type = "task" if prefix.startswith("tasks.item") else "user"
-                    
-                    if obj_type == "task":
-                        print(f"✅ [就绪] 类别: {obj_type} | 数据: {full_obj}")
-                    elif obj_type == "user":
-                        print(f"✅ [就绪] 类别: {obj_type} | 数据: {full_obj}")
+                    print(f"✅ [就绪] 类别: {obj_type} | 数据: {full_obj}")
 
                     builder = None  # 重置构造器
     except ijson.common.IncompleteJSONError:
