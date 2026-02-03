@@ -25,6 +25,19 @@ def write_excel(excel_file):
     # 写入到Excel文件
     df.to_excel(excel_file, index=False) # fixme：如果不是新文件，需要重点关注数据的覆盖问题，如果原先excel已有数据，会被全部覆盖
 
+def append_data_to_excel(excel_file):
+    exist_df = pd.read_excel(excel_file)
+    new_df = pd.DataFrame({
+        '姓名': ['赵六', '孙七'],
+        '年龄': [26, 31],
+        '城市': ['深圳', '杭州']
+    })
+
+    # fixme：默认读第一个sheet页，写Sheet-1，重点关注其他sheet页数据的覆盖问题
+    # 合并数据
+    combined_df = pd.concat([exist_df, new_df], ignore_index=True)
+    combined_df.to_excel(excel_file, index=False)
+
     
 if __name__ == '__main__':
     # 获取当前文件的路径
@@ -36,4 +49,7 @@ if __name__ == '__main__':
 
     # 往数据表中写入数据
     test_file = os.path.join(current_dir, "test.xlsx")
-    write_excel(test_file)
+    #write_excel(test_file)
+    
+    # 往数据表中追加数据
+    append_data_to_excel(test_file)
