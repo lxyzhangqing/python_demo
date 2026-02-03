@@ -23,7 +23,7 @@ def write_excel(excel_file):
     
     df = pd.DataFrame(data)
     # 写入到Excel文件
-    df.to_excel(excel_file, index=False)
+    df.to_excel(excel_file, index=False) # fixme：如果不是新文件，需要重点关注数据的覆盖问题，如果原先excel已有数据，会被全部覆盖
 
     
 if __name__ == '__main__':
